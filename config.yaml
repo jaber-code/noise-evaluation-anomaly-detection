@@ -1,0 +1,44 @@
+#The presentation is where we'll learn the most about you,
+#so put more effort here than into having a polished codebase
+experiment:
+  dataset_name: "26_optdigits" # 6_cardio, 30_satellite, 26_optdigits (https://github.com/Minqi824/ADBench/blob/main/adbench/datasets/README.md)
+  agg_type: "MAX"              # Options: MAX, MEAN, MIN, SUM
+  seed: 0
+  write_to_file: true  
+  output_dir: "runs"    
+training:
+  training_type: "UAD" # UAD / OCC
+  model_type: "VANILLA_MLP"        # Options: VANILLA_MLP, RES_MLP
+  epochs: 500
+  batch_size: 256
+  lr: 0.0001
+  weight_decay: 0.0005
+  lr_decay_epoch: 100
+  lr_decay_factor: 0.1
+
+noise_diversity:
+  m: 5 # Default is 3
+  used_noise_distributions: [UNIFORM]
+  noise_dist_configs:
+      GAUSSIAN:
+        sigma_max: 2.0
+        noise_ratios: [0.5, 0.7, 1.0]  # The percentage of features to be corrupted per chunk/sample
+      LAPLACE:
+        sigma_max: 5.0  
+        noise_ratios: [0.5, 0.8, 1.0]
+      UNIFORM:
+        sigma_max: 1.5
+        noise_ratios: [0.5, 0.4, 0.6, 0.7]
+      RAYLEIGH:
+        sigma_max: 2.0
+        noise_ratios: [0.5, 0.7, 1.0]
+      POISSON:
+        sigma_max: 2.0
+        noise_ratios: [0.5, 0.8, 1.0]
+      GAMMA:
+        sigma_max: 2.0
+        noise_ratios: [0.5, 0.8, 1.0]
+      SALT_PEPPER: 
+        noise_ratios: [0.05]  
+      BERNOULLI: 
+        noise_ratios: [0.05]         
