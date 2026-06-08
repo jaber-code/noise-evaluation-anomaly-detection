@@ -1,5 +1,3 @@
-#The presentation is where we'll learn the most about you,
-#so put more effort here than into having a polished codebase
 experiment:
   dataset_name: "26_optdigits" # 6_cardio, 30_satellite, 26_optdigits (https://github.com/Minqi824/ADBench/blob/main/adbench/datasets/README.md)
   agg_type: "MAX"              # Options: MAX, MEAN, MIN, SUM
