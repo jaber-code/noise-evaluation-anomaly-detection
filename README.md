@@ -1,10 +1,6 @@
-## Hardware and execution time
-
-All experiments were conducted on the following local hardware:
-* **CPU:** Intel Core i7-12700H
 # Noise Evaluation for Anomaly Detection
 
-A small Python/PyTorch project that trains a neural network to recognize feature-level noise and uses its predictions as anomaly scores. It follows the noise-evaluation approach from a research paper and compares the results with Isolation Forest and Local Outlier Factor.
+A small Python/PyTorch implementation of [Unsupervised Anomaly Detection for Tabular Data Using Noise Evaluation](https://arxiv.org/abs/2412.11461). It trains a neural network to recognize feature-level noise and uses its predictions as anomaly scores, then compares the results with Isolation Forest and Local Outlier Factor.
 
 ## What it does
 
